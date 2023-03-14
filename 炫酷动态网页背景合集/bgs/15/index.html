@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火箭升空 | By XIAO-HIGH</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <div class="rocket">
+            <img src="./rocket.png" alt="">
+        </div>
+
+    </div>
+
+    <script>
+        function rand(m,n){
+            return Math.ceil(Math.random() * (n-m+1)) + m-1;
+        }
+
+        //光线的总数
+        let num = 40;
+        //循环
+        for(let i=0;i<num;i++){
+            //创建 i 元素
+            const i = document.createElement('i');
+            //设置样式
+            i.style.height = rand(30, 100) + 'px';
+            i.style.left = rand(1, 99) + 'vw';
+            //随机动画的周期
+            i.style.animationDuration = rand(5, 30) / 10 + 's'; // 0.5 3
+            //将 i 插入到 container 元素中
+            document.querySelector('.container').appendChild(i);
+        }
+    </script>
+</body> 
+</html>

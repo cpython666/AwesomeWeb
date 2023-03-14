@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    height:100vh;
+    background:rgb(0, 2, 19);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .rocket{
+    position: relative;
+    animation: shake 0.5s linear infinite;
+}
+
+@keyframes shake{
+    0%, 100%{
+        transform: translateY(-2px);
+    }
+
+    50%{
+        transform: translateY(2px);
+    }
+}
+
+.container .rocket::after{
+    content: "";
+    width: 10px;
+    height: 150px;
+    background: linear-gradient( rgb(40, 158, 194), transparent);
+    position:absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom:-150px;
+}
+
+.container i{
+    width:1px;
+    height:20px; /* 30 - 100*/
+    position:absolute;
+    left: 20px;  /*1 - 99vw*/
+    top: 0px;  
+    background: #fff;
+    animation: line 2s linear infinite;
+}
+
+@keyframes line{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(80vh);
+    }
+}
+
+
+
+
