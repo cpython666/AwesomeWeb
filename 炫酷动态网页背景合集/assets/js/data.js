@@ -78,6 +78,16 @@ var data=[
             "name":"3D飞机",
             "url":"./bgs/16/index.html",
             "imgUrl":"./bgs/16/preview.gif"
+        },
+        {
+            "name":"华丽气泡",
+            "url":"./bgs2/17/index.html",
+            "imgUrl":"./bgs2/17/preview.gif"
+        },
+        {
+            "name":"渐变背景",
+            "url":"./bgs2/18/index.html",
+            "imgUrl":"./bgs2/18/preview.gif"
         }
     ]
 
