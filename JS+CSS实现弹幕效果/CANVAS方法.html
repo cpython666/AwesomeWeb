@@ -1,0 +1,87 @@
+<html>
+<head>
+<style>
+  #canvas {
+    width: 800px;
+    height: 600px;
+    background-color: black;
+  }
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+// 定义一个函数用来创建和绘制弹幕
+function createDanmu(text) {
+  // 创建一个对象
+  var danmu = {};
+  // 设置其文本内容为参数值
+  danmu.text = text;
+  // 设置其字体大小为24px
+  danmu.fontSize = 24;
+  // 设置其随机的颜色
+  danmu.color = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+  // 设置其初始的x坐标为canvas的宽度
+  danmu.x = canvas.width;
+  // 设置其随机的y坐标，保证在canvas的高度范围内
+  danmu.y = Math.random() * (canvas.height - danmu.fontSize) + danmu.fontSize;
+  // 设置其移动速度为2到6之间的随机数
+  danmu.speed = Math.random() * (6 - 2) + 2;
+  
+  // 将对象存入数组中
+  danmus.push(danmu);
+}
+
+// 获取canvas元素
+var canvas = document.getElementById("canvas");
+// 获取canvas的上下文对象，用来绘制图形
+var ctx = canvas.getContext("2d");
+// 定义一个数组用来存放弹幕对象
+var danmus = [];
+// 定义一个数组用来存放一些弹幕内容
+var texts = ["Hello", "World","关注", "弹幕", "点赞", "哈哈哈"];
+// 定义一个定时器，每隔一秒创建一条弹幕
+setInterval(function() {
+      // 随机选择一个弹幕内容
+  var text = texts[Math.floor(Math.random() * texts.length)];
+  // 调用函数创建一条弹幕
+  createDanmu(text);
+},1000);
+
+// 定义一个函数用来绘制所有的弹幕
+function drawDanmus() {
+  // 清空canvas上的内容
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // 遍历数组中的每个对象
+  for (var i = 0; i < danmus.length; i++) {
+    // 获取当前对象
+    var danmu = danmus[i];
+    // 设置字体样式
+    ctx.font = danmu.fontSize + "px Arial";
+    // 设置字体颜色
+    ctx.fillStyle = danmu.color;
+    // 绘制文本到canvas上，根据对象的x和y坐标
+    ctx.fillText(danmu.text,danmu.x,danmu.y);
+    // 更新对象的x坐标，使其向左移动一定的速度
+    danmu.x -= danmu.speed;
+    // 判断对象是否已经移出了canvas的左边界，如果是，则从数组中删除该对象，并减少i的值，避免跳过下一个对象
+    if (danmu.x < -ctx.measureText(danmu.text).width) {
+      danmus.splice(i,1);
+      i--;
+    }
+  }
+}
+
+// 使用requestAnimationFrame来循环调用drawDanmus函数，实现动画效果
+function animate() {
+     // 调用drawDanmus函数
+  drawDanmus();
+  // 使用requestAnimationFrame来再次调用animate函数，形成循环
+  requestAnimationFrame(animate);
+}
+
+// 调用animate函数，开始动画
+animate();
+</script>
+</body>
+</html>
