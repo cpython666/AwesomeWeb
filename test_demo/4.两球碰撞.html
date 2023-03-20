@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+        #canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+
+// 旋转向量
+function rotateVector(v, theta) {
+  return {
+    dx: v.dx * Math.cos(theta) - v.dy * Math.sin(theta),
+    dy: v.dx * Math.cos(theta) + v.dy * Math.sin(theta)
+  }
+}
+
+// 完全弹性碰撞计算新的速度（旋转后的坐标）
+function resolveCollision(p1, p2) {
+  let v1 = { dx: p1.dx, dy: p1.dy };
+  let v2 = { dx: p2.dx, dy: p2.dy };
+
+  // 旋转
+  let theta = -Math.atan2(p1.y - p2.y, p1.x - p2.x);
+
+  let v1Rotated = rotateVector(v1, theta);
+  let v2Rotated = rotateVector(v2, theta);
+
+  
+  let v1RotatedAfterCollision = {
+    dx: (v1Rotated.dx * (p1.mass - p2.mass) + 2 * p2.mass * v2Rotated.dx) / (p1.mass + p2.mass),
+    dy: v1Rotated.dy
+  };
+
+  
+  let v2RotatedAfterCollision = {
+    dx: (v2Rotated.dx * (p2.mass - p1.mass) + 2 * p1.mass * v1Rotated.dx) / (p1.mass + p2.mass),
+    dy: v2Rotated.dy
+  };
+
+  
+ // 将新速度旋转回原来的角度获得真正的速度
+ let v1finalCollision = rotateVector(v1RotatedAfterCollision,-theta);
+ let v2finalCollision = rotateVector(v2RotatedAfterCollision,-theta);
+
+ //更新小球的速度
+ p1.dx = v1finalCollision.dx;
+ p1.dy = v1finalCollision.dy;
+ p2.dx = v2finalCollision.dx;
+ p2.dy = v2finalCollision.dy;
+
+}
+    // 两球碰撞后速度
+// function resolveCollision(p1, p2) {
+// }
+
+
+var canvas = document.getElementById('canvas');
+let c=canvas.getContext('2d');
+var width=canvas.width = window.innerWidth;
+var height=canvas.height = window.innerHeight;
+
+var mouse={
+    x:undefined,
+    y:undefined
+}
+var colorArray=[
+    'red',
+    'blue',
+    'pink',
+    'orange',
+    'purple',
+    'green',
+    'yellow',
+]
+var circleArray=[]
+var circleNum=10;
+window.addEventListener("mousemove", function(event){
+    mouse.x = event.x
+    mouse.y = event.y
+})
+window.addEventListener("resize", function(event){
+    width=canvas.width = window.innerWidth;
+    height=canvas.height = window.innerHeight;
+
+    init();
+})
+function distance(a,b,x,y){
+    return Math.sqrt(Math.pow(x-a,2)+Math.pow(y-b,2))
+}
+
+function Circle(x,y,dx,dy,r,maxRadius,minRadius){
+    this.x=x;
+    this.y=y;
+    this.dx=dx;
+    this.dy=dy;
+    this.r=r;
+
+    this.mass=1;
+
+    this.maxRadius=maxRadius
+    this.minRadius=minRadius
+
+    this.color=colorArray[Math.floor(Math.random()*colorArray.length)]
+
+    this.draw=function(){
+        c.beginPath()
+        c.arc(this.x,this.y,this.r,Math.PI*2,false);
+        c.strokeStyle='blue';
+        c.strokeStyle=this.color
+
+        c.stroke();
+    }
+
+    this.update=function(){
+        if(this.x-this.r<0 || this.x+this.r>width){
+            this.dx=-1*this.dx
+        }
+        if(this.y-this.r<0 || this.y+this.r>height){
+            this.dy=-1*this.dy
+        }
+        this.x+=this.dx
+        this.y+=this.dy
+
+        for(let i=0;i<circleArray.length;i++){
+            if(this===circleArray[i])continue;
+            if(distance(circleArray[i].x,circleArray[i].y,this.x,this.y)-this.r-circleArray[i].r<0){
+
+
+                resolveCollision(this,circleArray[i] )
+                    console.log(111)
+
+
+
+            }
+        }
+
+        this.draw()
+    }
+}
+
+
+function init(){
+    for (var i=0;i<circleNum;i++){
+        var r=(Math.random()+0.5)*10+30;
+        var maxRadius=(Math.random()+0.5)*10+20;
+        var minRadius=(Math.random()+0.5)*4+1;
+        var x=Math.random()*(width-2*r)+r;
+        var y=Math.random()*(height-2*r)+r
+        var dx=(Math.random()-0.5)*2;
+        var dy=(Math.random()-0.5)*2;
+    
+        circleArray.push(new Circle(x,y,dx,dy,r,maxRadius,minRadius))
+    }
+}
+function animate(){
+    requestAnimationFrame(animate);
+
+    c.clearRect(0,0,width,height);
+
+    for (var i=0;i<circleArray.length;i++){
+        circleArray[i].update()
+    }
+}
+init()
+animate()
+
+</script>
+</html>
