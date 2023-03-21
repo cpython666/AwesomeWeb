@@ -38,6 +38,7 @@
     <div class="layer light light-2"></div>
   </div>
 </div>
+<script src="jquery.min.js"></script>
 <script>
   // 定义一个函数用来创建和插入弹幕
   function createDanmu(text) {
@@ -73,7 +74,10 @@
   setTimeout(function(){
     clearInterval(addDanmu)
   },7000)
-
+  $('.danmu').on('mousemove',function(){
+    // this.css("animation-play-state","paused")
+    this.stop()
+  })
   </script>
 </body>
 </html>
