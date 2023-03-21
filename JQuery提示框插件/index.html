@@ -7,16 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>插件一</h2>
+
+
+
+
+    <h2>插件二</h2>
     <button class="primary">
         HelloWorld~
     </button>
 </body>
 <script src="./jquery.min.js"></script>
 <script src="./alerts.js"></script>
+<script src="./popup.js"></script>
 <script>
     $('.primary').click(function(){
-        console.log($(this))
-        $.alerts.PrimaryAlert('1111')
+        // console.log($(this).alerts.PrimaryAlert('11111111'))
+        $.alerts({})
+
     })
+    $.popup()
 </script>
 </html>

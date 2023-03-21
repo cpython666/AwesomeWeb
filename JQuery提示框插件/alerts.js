@@ -1,6 +1,16 @@
 (function( $ ) {
  // 在jQuery.fn上添加alerts方法
-    $.fn.alerts = function() {
+    $.fn.alerts = function(options) {
+
+        // 定义默认选项
+        var defaults = {
+            type: "primary",
+            msg:"这是一个提示框~"
+        };
+
+         // 合并用户选项和默认选项
+        var settings = $.extend({}, defaults, options);
+
 
         this.ShowTip=function(msg, type,bgColor,borderColor,fontColor) {
             var $tip = $('.tips');
@@ -21,11 +31,17 @@
                                             },1000,function(){
                                                 this.remove()
                                             });
-                                        }
-
-        this.PrimaryAlert=function(msg) {
-            this.ShowTip(msg, 'primary','#cfe2ff','#9ec5fe','#0a58ca');
         }
+
+
+
+        if (settings.type=='primary'){
+            this.PrimaryAlert=function(msg) {
+                this.ShowTip(settings.msg, 'primary','#cfe2ff','#9ec5fe','#0a58ca');
+            }
+        }
+
+
         this.SuccessAlert=function(msg) {
             this.ShowTip(msg, 'success','#d1e7dd','#a3cfbb','#146c43');
         }
@@ -41,7 +57,7 @@
         this.LightAlert=function(msg) {
             this.ShowTip(msg, 'light','#fcfcfd','#e9ecef','#6c757d');
         }
-        this. DarkAlert=function(msg) {
+        this.DarkAlert=function(msg) {
             this.ShowTip(msg, 'dark','#ced4da','#adb5bd','#495057');
         }
     };
