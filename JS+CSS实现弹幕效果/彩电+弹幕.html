@@ -48,7 +48,6 @@
     danmu.innerText = text;
     // 设置其类名为danmu
     danmu.className = "danmu";
-  
       // 设置其随机的高度
     danmu.style.top = Math.random() * (container.clientHeight - danmu.clientHeight-100) + "px";
     // 设置其随机的颜色
@@ -74,9 +73,10 @@
   setTimeout(function(){
     clearInterval(addDanmu)
   },7000)
-  $('.danmu').on('mousemove',function(){
+  $('.danmu').on('click',function(){
     // this.css("animation-play-state","paused")
     this.stop()
+    console.log(111)
   })
   </script>
 </body>
