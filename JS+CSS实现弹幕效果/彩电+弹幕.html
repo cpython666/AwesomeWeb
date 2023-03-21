@@ -14,12 +14,14 @@
     transition: all ease 0.5s;
     z-index: 10;
     user-select: none;
+    animation-play-state: running;
   }
   .danmu:hover{
     transform: scale(1.05);
     padding: 10px;
     border: 1px solid white;
     cursor: pointer;
+    animation-play-state : paused;
 
   }
 
@@ -71,6 +73,7 @@
   setTimeout(function(){
     clearInterval(addDanmu)
   },7000)
+
   </script>
 </body>
 </html>
