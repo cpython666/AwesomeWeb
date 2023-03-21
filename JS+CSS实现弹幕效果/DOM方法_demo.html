@@ -56,7 +56,9 @@ let addDanmu=setInterval(function() {
   // 调用函数创建并插入弹幕
   createDanmu(text);
 },1000);
-setTimeout(clearInterval(addDanmu),5000)
+setTimeout(function(){
+  clearInterval(addDanmu)
+},5000)
 </script>
 </body>
 </html>
