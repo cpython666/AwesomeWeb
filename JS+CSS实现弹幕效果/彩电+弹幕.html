@@ -5,6 +5,7 @@
   <title>Apple TV</title>
 <link rel="stylesheet" href="./style.css">
 <style>
+
     .danmu {
     position: absolute;
     right: 0;
@@ -14,40 +15,78 @@
     transition: all ease 0.5s;
     z-index: 10;
     user-select: none;
-    animation-play-state: running;
   }
+  
   .danmu:hover{
     transform: scale(1.05);
     padding: 10px;
     border: 1px solid white;
+    z-index: 11;
     cursor: pointer;
-    animation-play-state : paused;
-
   }
 
+  .paused {
+  animation-play-state: paused;
+}
+.show{
+  opacity: 1;
+}
+.hide{
+  opacity: 0;
+}
+.zan{
+  transition: all ease 1s;
+}
+.btns{
+  position: absolute;
+  top:100%;
+  left: 50%;
+}
   @keyframes move {
-    from {right: 0;}
+    from {right: -50px;}
     to {right: calc(100% + 200px);}
   }
 </style>
 </head>
 <body>
 <div class="wrapper">
+
   <div class="ad" id="container">
     <div class="layer light"></div>
     <div class="layer light light-2"></div>
   </div>
+
+  <div class="btns">
+    <button type="button" class="btn">发送加油</button>
+    <button type="button" class="btn">发送冲冲冲</button>
+    <button type="button" class="btn">发送不忘初心</button>
+  </div>
 </div>
 <script src="jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
 <script>
   // 定义一个函数用来创建和插入弹幕
   function createDanmu(text) {
     // 创建一个span元素
     var danmu = document.createElement("span");
+    var zan = document.createElement("span");
+    zan.innerHTML = '👍'
+
+    var cai = document.createElement("span");
+    cai.innerHTML ='👎'
+
+    zan.className = "hide";
+    cai.className = "hide";
+    zan.classList.add('zan')
+    cai.classList.add('zan')
+
+
     // 设置其文本内容为参数值
     danmu.innerText = text;
     // 设置其类名为danmu
     danmu.className = "danmu";
+    danmu.appendChild(zan)
+    danmu.appendChild(cai)
       // 设置其随机的高度
     danmu.style.top = Math.random() * (container.clientHeight - danmu.clientHeight-100) + "px";
     // 设置其随机的颜色
@@ -68,16 +107,35 @@
     var text = texts[Math.floor(Math.random() * texts.length)];
     // 调用函数创建并插入弹幕
     createDanmu(text);
+  },1000);
 
-  },500);
+
   setTimeout(function(){
     clearInterval(addDanmu)
   },7000)
-  $('.danmu').on('click',function(){
-    // this.css("animation-play-state","paused")
-    this.stop()
-    console.log(111)
+  $('body').on('mouseover','.danmu',function(e) {
+    $(this).css("animation-play-state","paused")
+    $(this).children().removeClass('hide')
+
   })
+
+  $('body').on('mouseout','.danmu',function(e) {
+    $(this).css("animation-play-state","running")
+    $(this).children().addClass('hide')
+  })
+
+  $('body').on('click','.zan',function() {
+    $(this).animate({
+      'font-size':'35px'
+    },300,function(){
+    })
+  })
+  var s1;
+  $('body').on('click','.btn',function() {
+    s1=$(this).text().replace('发送','')
+    createDanmu(s1)
+  })
+
   </script>
 </body>
 </html>
