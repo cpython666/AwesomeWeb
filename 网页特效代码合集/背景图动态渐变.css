@@ -1,0 +1,21 @@
+/* @-webkit-keyframes hueRotate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+} */
+
+@keyframes hueRotate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.bg1 {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  background: linear-gradient(30deg, #ffcc00, deeppink, #9c27b0);
+  /* -webkit-animation: hueRotate 5s infinite alternate; */
+          animation: hueRotate 5s infinite alternate;
+}
+

@@ -1,0 +1,130 @@
+<link rel="stylesheet" type="text/css" href="./index.css">
+
+<link rel="stylesheet" type="text/css" href="./背景图动态渐变.css">
+
+<script type="text/javascript" src="./js/css-doodle/0.7.2/css-doodle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./动态磨砂玻璃渐变背景.css">
+
+
+<body>
+   
+    <div>
+        <span>背景图动态渐变</span>
+        <div class="bg1" style="width: 300px;height: 200px;"></div>
+    </div>
+    <div>
+        <span>聚光灯spotlight</span>
+        <div class="spotlight" style="width: 300px;height: 200px;overflow: hidden;">
+            <css-doodle>
+                :doodle { 
+                    @grid: 1x26 / 300px 200px; 
+                    background: #000;
+                } 
+                
+                :container { 
+                    max-width: 70vw;
+                    margin: 0 auto;
+                } 
+                
+            
+                @even {
+                    position: relative;
+                    height: 70%;
+                    top: 10%;
+                    background: linear-gradient(to top, rgba(@r(50, 255), @r(255, 255), 255, 1), rgba(255, 255, 255, .1) 80%);
+                    transform: perspective(@r(7, 35)vmin) rotateX(-@r(15, 45)deg) skewX(@r(-60, 60)deg);
+                    transform-origin: center bottom;
+                    box-shadow: 0 0 2vmin .1vmin rgba(255, 255, 255, .7);
+                    opacity: 0;
+                    animation: fadeIn 7s infinite calc(@index() * 0.03s);
+                }
+                
+                @keyframes fadeIn {
+                    1% {
+                        opacity: 1;
+                    }
+                    10% {
+                        opacity: 1;
+                        filter: hue-rotate(0);
+                    }
+            <!--         30% {
+                        opacity: 1;
+                        transform: perspective(@r(10, 35)vmin) rotateX(-@r(15, 45)deg) skewX(0deg);
+                        filter: hue-rotate(360deg);
+                    }
+                    35% {
+                        opacity: 1;
+                        transform: perspective(@r(10, 35)vmin) rotateX(-@r(15, 45)deg) skewX(30deg);
+                        filter: hue-rotate(360deg);
+                    }
+                    45% {
+                        opacity: 1;
+                        transform: perspective(@r(10, 35)vmin) rotateX(-@r(15, 45)deg) skewX(-30deg);
+                        filter: hue-rotate(360deg);
+                    } -->
+                    50% {
+                        opacity: 1;
+                        transform: perspective(@r(10, 35)vmin) rotateX(-@r(15, 45)deg) skewX(0deg);
+                        filter: hue-rotate(360deg);
+                    }
+                    50.1% {
+                        opacity: 0;
+                    }
+                }
+            
+            </css-doodle>
+        </div>
+    </div>
+    <div>
+        <span>磨砂玻璃渐变背景</span>
+        <div class="bg2" style="width: 300px;height: 200px;overflow: hidden;">
+            <div class="g-polygon g-polygon-1"></div>
+            <div class="g-polygon g-polygon-2"></div>
+            <div class="g-polygon g-polygon-3"></div>
+        </div>
+    </div>
+    <div>
+        <span>动态磨砂玻璃渐变背景</span>
+        <div class="bg2" style="width: 300px;height: 200px;overflow: hidden;">
+            <css-doodle>
+                :doodle {
+                    @grid: 1x8 / 100vmin;
+                }
+                @place-cell: center;
+                width: @rand(40vmin, 80vmin);
+                height: @rand(40vmin, 80vmin);
+                transform: translate(@rand(-200%, 200%), @rand(-60%, 60%)) scale(@rand(.8, 1.8)) skew(@rand(45deg));
+                clip-path: polygon(
+                  @r(0, 30%) @r(0, 50%), 
+                  @r(30%, 60%) @r(0%, 30%), 
+                  @r(60%, 100%) @r(0%, 50%), 
+                  @r(60%, 100%) @r(50%, 100%), 
+                  @r(30%, 60%) @r(60%, 100%),
+                  @r(0, 30%) @r(60%, 100%)
+                );
+                background: @pick(#f44336, #e91e63, #9c27b0, #673ab7, #3f51b5, #60569e, #e6437d, #ebbf4d, #00bcd4, #03a9f4, #2196f3, #009688, #5ee463, #f8e645, #ffc107, #ff5722, #43f8bf);
+                opacity: @rand(.3, .8);
+
+                position: relative;
+                top: @rand(-80%, 80%);
+                left: @rand(-80%, 80%);
+                animation: colorChange @rand(6.1s, 16.1s) infinite @rand(-.5s, -2.5s) linear alternate;
+              
+              @keyframes colorChange {
+                100% {
+                  left: 0;
+                  top: 0;
+                  filter: hue-rotate(360deg);
+                }
+              }
+            </css-doodle>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+

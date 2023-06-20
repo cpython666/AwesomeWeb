@@ -1,0 +1,12 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+body>div{
+    width: 300px;
+    height: 250px;
+}
+body>div>span{
+    margin-bottom: 10px;
+}
