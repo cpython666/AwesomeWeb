@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.return{
+    position: absolute;
+    top: 20px;
+    width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius:20px;
+    background-color: #f03726;
+    color: white;
+    font-weight: bold;font-size: 25px;
+    transition: all 0.3s ease;
+}
+.return:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.return:active{
+    transform: scale(0.95);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.comment{
+    right: 200px;
+}
+
+.shop-card img{
+    width: 100px;
+    height:100px;
+}
+

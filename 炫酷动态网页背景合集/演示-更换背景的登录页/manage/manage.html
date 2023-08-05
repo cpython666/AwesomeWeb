@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理页面</title>
+    <link rel="stylesheet" href="manage.css">
+    <script src="../../js/jquery.js"></script>
+    <script src="manage.js"></script>
+</head>
+<body>
+<div class="add">
+    添加商品
+</div>
+<div class="return">返回</div>
+
+<div id="j_mask" class="mask"></div>
+<!--添加数据的表单-->
+<div id="j_formUpd" class="form-add">
+    <div class="form-add-title">
+        <span>修改商品</span>
+        <div class="j_hideFormAdd">×</div>
+    </div>
+    <form action="/ServletupdateShop" method="post">
+        <div class="form-item">
+            <label class="lb" for="id__">商品id：</label>
+            <input class="name_" type="text" id="id__" name="id__" readonly>
+        </div>
+    <div class="form-item">
+        <label class="lb" for="name__">商品名称：</label>
+        <input class="name_" type="text" id="name__" name="name__" required placeholder="请输入商品名称">
+    </div>
+        <div class="form-item">
+            <label class="lb" for="price__">商品价格：</label>
+            <input type="number" id="price__" name="price__" required>
+        </div>
+    <div class="form-item">
+        <label class="lb" for="shopclass__">商品分类：</label>
+        <input type="text" id="shopclass__" name="shopclass__" required>
+    </div>
+    <div class="form-item">
+        <label class="lb" for="inf__">商品详情：</label>
+        <input type="text" id="inf__" name="inf__" required>
+    </div>
+    <div class="form-item">
+        <label class="lb" for="url__">商品图片：</label>
+        <input type="text" id="url__" name="url__" required>
+    </div>
+    <div class="form-submit">
+        <input type="submit" value="修改">
+    </div>
+    </form>
+</div>
+
+<div id="j_formAdd" class="form-add">
+    <div class="form-add-title">
+        <span>添加商品</span>
+
+        <div class="j_hideFormAdd">×</div>
+    </div>
+    <form action="/ServletaddShop" method="post" enctype="multipart/form-data">
+        <div class="form-item">
+            <label class="lb" for="name_">商品名称：</label>
+            <input class="name_" type="text" id="name_" name="name_" required placeholder="请输入商品名称">
+        </div>
+        <div class="form-item">
+            <label class="lb" for="price_">商品价格：</label>
+            <input type="number" id="price_" name="price_"required>
+        </div>
+        <div class="form-item">
+            <label class="lb" for="shopclass_">商品分类：</label>
+            <input type="text" id="shopclass_" name="shopclass_" required>
+        </div>
+        <div class="form-item">
+            <label class="lb" for="inf_">商品详情：</label>
+            <input type="text" id="inf_" name="inf_" required>
+        </div>
+        <div class="form-item">
+            <label class="lb" for="url_">商品图片：</label>
+            <input type="file" id="url_" name="url_" required>
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="添加" id="j_btnAdd">
+        </div>
+    </form>
+</div>
+
+<div class="body">
+    <div class="title">商品列表</div>
+    <div class="head">
+        <div class="id">id</div>
+        <div class="name">name</div>
+        <div class="price">price</div>
+        <div class="shopclass">shopclass</div>
+        <div class="inf">inf</div>
+        <div class="url">url</div>
+        <div class="fun-h">操作1</div>
+        <div class="fun-h">操作2</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

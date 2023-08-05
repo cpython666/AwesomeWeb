@@ -1,0 +1,217 @@
+:root{
+    --login-bg:#c6cee3;
+    --front: rgba(113, 113, 232, 0.6);
+    --back: rgba(78, 78, 158, 0.6);
+
+}
+iframe{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+body{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: var(--login-bg);
+    position: relative;
+}
+.setting{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+.setting:hover{
+    cursor: pointer;
+}
+.setting img{
+    width: 30px;
+    height:30px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.setting div {
+    margin: 2px;
+    padding: 2px;
+    width: 50px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.setting div:hover{
+    background-color: #999999;
+}
+.main{
+    width: 850px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(173, 187, 228, 0.19);
+    box-shadow: 0.3rem 0.3rem 0.6rem #7e869d, -0.2rem -0.2rem 0.5rem  #9391c3;
+    border-radius: 5px;
+}
+.head{
+    display: flex;
+    flex-direction:row;
+    padding: 10px 0;
+    font-weight: bold;
+}
+.head div{
+    margin: 3px 15px;
+    padding: 6px 9px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    font-size: 18px;
+    color: rgba(245, 241, 241, 0.62);
+    align-items: center;
+}
+.head div img{
+    width: 35px;
+    height: 35px;
+    margin: 2px 3px;
+}
+.head div:hover{
+    background-color: rgba(63, 76, 189, 0.34);
+    transform: scale(1.05);
+    color: white;
+    cursor: pointer;
+}
+.main .head .big{
+    background-color: rgba(63, 76, 189, 0.83);
+    transform: scale(1.05);
+    color: white;
+}
+.head div:active{
+    transform: scale(0.95);
+}
+.body{
+    border-radius: 10px;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    /*background-color: #662bd3;*/
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+.body .front{
+    z-index: 1;
+    background-color:var(--front);
+}
+.body .front,.body .back{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+}
+.back{
+    transform: translateY(250px) rotateX(-90deg);
+    background-color:var(--back);
+}
+.body div .left{
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #be7dec 0 0 10px 0
+}
+.body div .right{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.body div .right .exist{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    text-align: center;
+    display: none;
+}
+.body form{
+    display: flex;
+    flex-direction: column;
+align-items: center;
+    transform: translateY(-50px);
+}
+.body form h2{
+    text-align: center;
+    margin-top: 30px;
+}
+.body form input{
+    outline: none;
+    background:none;
+    border: none;
+    width: 200px;
+    height: 50px;
+    margin: 20px 0;
+    font-size: 16px;
+    border-bottom: 1px solid white;
+    transition: all 0.3s ease;
+    color: white;
+}
+.body form input::placeholder{
+    color:white;
+}
+.body form input:focus{
+    border: white solid 1px;
+    transform: scale(1.2);
+}
+.body form button{
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 50px;
+    background-color: #8751ea;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    color: white;
+}
+.body form button:hover{
+    transform: scale(1.1);
+}
+.body form button:active{
+    transform: scale(0.9);
+}
+.left .welcome{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.left img{
+    width: 120px;
+    height: 120px;
+}
+.left p{
+    font-size: 18px;
+}
