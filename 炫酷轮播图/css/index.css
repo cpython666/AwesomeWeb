@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#slider {
+    width: 1024px;
+    height: 576px;
+    overflow: hidden;
+}
+
+img {
+    width: 1024px;
+    object-fit: cover;
+    object-position: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    margin: 5px 8px 5px 8px;
+}
+
+ul li:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

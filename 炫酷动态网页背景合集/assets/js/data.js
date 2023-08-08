@@ -42,7 +42,7 @@ var data=[
         {
             "name":"群星飞舞",
             "url":"./bgs/9/index.html",
-            "imgUrl":"./bgs/9/preview.png"
+            "imgUrl":"./bgs/9/preview.gif"
         },
         {
             "name":"满天繁星",
@@ -88,6 +88,71 @@ var data=[
             "name":"渐变背景",
             "url":"./bgs2/18/index.html",
             "imgUrl":"./bgs2/18/preview.gif"
+        },
+        {
+            "name":"火星蔓延",
+            "url":"./bgs2/19/index.html",
+            "imgUrl":"./bgs2/19/preview.gif"
+        },
+        {
+            "name":"宇宙之眼",
+            "url":"./bgs2/20/index.html",
+            "imgUrl":"./bgs2/20/preview.gif"
+        },
+        {
+            "name":"伸缩方块",
+            "url":"./bgs2/21/index.html",
+            "imgUrl":"./bgs2/21/preview.gif"
+        },
+        {
+            "name":"彩色星星",
+            "url":"./bgs2/22/index.html",
+            "imgUrl":"./bgs2/22/preview.gif"
+        },
+        {
+            "name":"霓虹灯面板TODO",
+            "url":"./bgs2/23/index.html",
+            "imgUrl":"./bgs2/23/preview.gif"
+        },
+        {
+            "name":"星海森林",
+            "url":"./bgs2/24/index.html",
+            "imgUrl":"./bgs2/24/preview.gif"
+        },
+        {
+            "name":"三维立方体",
+            "url":"./bgs2/25/index.html",
+            "imgUrl":"./bgs2/25/preview.gif"
+        },
+        {
+            "name":"雨落河流",
+            "url":"./bgs2/26/index.html",
+            "imgUrl":"./bgs2/26/preview.gif"
+        },
+        // {
+        //     "name":"海浪粒子TODO",
+        //     "url":"./bgs2/27/index.html",
+        //     "imgUrl":"./bgs2/27/preview.gif"
+        // },
+        {
+            "name":"跳跃小彩球",
+            "url":"./bgs2/28/index.html",
+            "imgUrl":"./bgs2/28/preview.gif"
+        },
+        {
+            "name":"粒子漩涡",
+            "url":"./bgs2/29/index.html",
+            "imgUrl":"./bgs2/29/preview.gif"
+        },
+        {
+            "name":"球中之鱼",
+            "url":"./bgs2/30/index.html",
+            "imgUrl":"./bgs2/30/preview.gif"
+        },
+        {
+            "name":"曲线空间",
+            "url":"./bgs2/31/index.html",
+            "imgUrl":"./bgs2/31/preview.gif"
         }
     ]
 

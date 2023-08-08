@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+
+<body>
+	<div id="slider">
+		<img src="./imgs/1.png" alt="">
+		<img src="./imgs/2.png" alt="">
+		<img src="./imgs/3.jpg" alt="">
+		<img src="./imgs/4.jpg" alt="">
+		<img src="./imgs/5.jpg" alt="">
+		<img src="./imgs/6.jpg" alt="">
+		<img src="./imgs/7.jpg" alt="">
+		<img src="./imgs/8.jpg" alt="">
+		<img src="./imgs/9.jpg" alt="">
+	</div>
+	<div id="transitions">
+		<ul id="trans2D">
+			2D转换
+			<li><a href="#bars">Bars</a></li>
+			<li><a href="#zip">Zip</a></li>
+			<li><a href="#blinds">Blinds</a></li>
+			<li><a href="#blocks">Blocks</a></li>
+			<li><a href="#concentric">Concentric</a></li>
+			<li><a href="#warp">Warp</a></li>
+			<li><a href="#slide">Slide</a></li>
+			<li><a href="#swipe" class="new">Swipe</a></li>
+			<li><a href="#dissolve" class="new">Dissolve</a></li>
+			<li><a href="#blocks2" class="new">Blocks2</a></li>
+		</ul>
+		<ul id="trans3d">
+			3D转换
+			<li><a href="#bars3d">Bars3D</a></li>
+			<li><a href="#cube">Cube</a></li>
+			<li><a href="#tiles3d">Tiles3D</a></li>
+			<li><a href="#blinds3d">Blinds3D</a></li>
+			<li><a href="#turn">Turn</a></li>
+		</ul>
+	</div>
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/flux.min.js"></script>
+<script>
+	$(function () {
+		window.f = new flux.slider('#slider', {
+			// 是否自動播放
+			autoplay: false,
+			// 是否分页显示
+			pagination: false,
+		});
+	})
+	$('div#transitions li a').on('click', function (event) {
+		event.preventDefault();
+		// If this is a 3D transform and the browser doesn't support 3D then inform the user
+		if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+			alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
+			return;
+		}
+		console.log(event.target.href.split('#')[1])
+		window.f.next(event.target.href.split('#')[1]);
+	});
+</script>
+
+</html>

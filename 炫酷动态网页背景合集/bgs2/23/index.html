@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+  overflow: hidden;
+}
+    iframe{
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="myIframe" src="https://www.jq22.com/js/a6.html" frameborder="0"></iframe>
+</body>
+<script>
+  // 获取iframe元素
+var iframe = document.getElementById('myIframe');
+// 获取iframe的window对象
+var iframeWindow = iframe.contentWindow;
+// 在iframe中执行JavaScript
+iframeWindow.postMessage('executeJS', "shape.print('编程启航')");
+</script>
+</html>
