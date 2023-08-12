@@ -70,7 +70,7 @@ $(function(){
     this.vx = -.5 + Math.random();
     this.vy = -.5 + Math.random();
 		//TODO
-    this.radius = Math.random() * 5;
+    this.radius = Math.random() * 2;
 
     this.color = new Color();
     console.log(this);
@@ -121,7 +121,7 @@ $(function(){
             ctx.strokeStyle = averageColorStyles(i_dot, j_dot);
             ctx.moveTo(i_dot.x, i_dot.y);
 						//TODO
-						ctx.lineWidth = 5;
+						ctx.lineWidth = 1;
             ctx.lineTo(j_dot.x, j_dot.y);
             ctx.stroke();
             ctx.closePath();

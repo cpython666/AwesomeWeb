@@ -1,0 +1,94 @@
+@charset "utf-8";
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F7F7F7;
+	overflow:hidden;
+}
+
+ul {
+	margin: 0;
+	padding: 50px;
+	list-style: none;
+}
+
+.register {
+	position: fixed;
+	width: 800px;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	z-index:1000;     
+	opacity: 0.8; 
+}
+
+li {
+	display: flex;
+	margin: 20px 0;
+}
+
+label, input {
+	display: block;
+	float: left;
+	height: 46px;
+	font-size: 24px;
+	box-sizing: border-box;
+	color: #333;
+}
+
+label {
+	width: 200px;
+	line-height: 46px;
+	margin-right: 30px;
+	text-align: right;
+}
+
+input {
+	width: 320px;
+	padding: 8px;
+	line-height: 1;
+	outline: none;
+	position: relative;
+}
+
+input.code {
+	width: 120px;
+}
+
+input.verify {
+	width: 190px;
+	margin-left: 10px;
+}
+
+input.disabled {
+	background-color: #CCC !important;
+}
+
+input[type=button] {
+	border: none;
+	color: #FFF;
+	background-color: #E64145;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.avatar {
+position: fixed;
+margin-top: -20px;    
+position: absolute;
+top: -60px;
+left: 50%;
+
+overflow: hidden;
+
+width: 130px;
+height: 130px;
+margin-left: -65px;
+
+border: 10px solid #fff;
+border-radius: 50%;
+box-shadow: 0 1px 5px #ccc;
+}

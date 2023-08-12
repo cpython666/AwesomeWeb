@@ -110,11 +110,6 @@ var data=[
             "imgUrl":"./bgs2/22/preview.gif"
         },
         {
-            "name":"霓虹灯面板TODO",
-            "url":"./bgs2/23/index.html",
-            "imgUrl":"./bgs2/23/preview.gif"
-        },
-        {
             "name":"星海森林",
             "url":"./bgs2/24/index.html",
             "imgUrl":"./bgs2/24/preview.gif"
@@ -129,11 +124,11 @@ var data=[
             "url":"./bgs2/26/index.html",
             "imgUrl":"./bgs2/26/preview.gif"
         },
-        // {
-        //     "name":"海浪粒子TODO",
-        //     "url":"./bgs2/27/index.html",
-        //     "imgUrl":"./bgs2/27/preview.gif"
-        // },
+        {
+            "name":"海之蓝",
+            "url":"./bgs2/27/index.html",
+            "imgUrl":"./bgs2/27/preview.gif"
+        },
         {
             "name":"跳跃小彩球",
             "url":"./bgs2/28/index.html",
@@ -153,6 +148,16 @@ var data=[
             "name":"曲线空间",
             "url":"./bgs2/31/index.html",
             "imgUrl":"./bgs2/31/preview.gif"
-        }
+        },
+        {
+            "name":"代码雨",
+            "url":"./bgs2/33/index.html",
+            "imgUrl":"./bgs2/33/preview.gif"
+        },
+        {
+            "name":"霓虹灯面板-TODO",
+            "url":"./bgs2/23/index.html",
+            "imgUrl":"./bgs2/23/preview.gif"
+        },
     ]
 
