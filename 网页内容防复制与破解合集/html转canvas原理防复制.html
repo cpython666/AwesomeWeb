@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML to Canvas</title>
+</head>
+<body>
+    <div id="html-content">
+        <h1>Hello, world!</h1>
+        <p>This is some HTML content that we want to convert to a Canvas.</p>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        // 获取HTML内容的引用
+        var htmlContent = document.getElementById("html-content");
+        // 获取Canvas的引用
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "black"; // 设置文字颜色为黑色
+
+        // 使用toDataURL方法将HTML内容绘制到Canvas
+        htmlContentToCanvas(htmlContent, ctx, canvas.width, canvas.height);
+
+        function htmlContentToCanvas(htmlContent, ctx, width, height) {
+            var data = new XMLSerializer().serializeToString(htmlContent);
+
+            var DOMURL = self.URL || self.webkitURL || self;
+            var img = new Image();
+            var svg = new Blob([data], { type: "image/svg+xml;charset=utf-8" });
+            var url = DOMURL.createObjectURL(svg);
+
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+                DOMURL.revokeObjectURL(url);
+            };
+
+            img.src = url;
+        }
+    </script>
+</body>
+</html>
