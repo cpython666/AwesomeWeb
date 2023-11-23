@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry Pumpkins</title>
+</head>
+<body style="background: #000; margin:0; background-image: url('background.jpg'); background-size: 1500px 800px; background-repeat: no-repeat;" onclick="showText()">
+    <p id="infoText" style="display:none; font-family: system-ui; color: #a2a2a2; line-height: 1.5em; margin-left: 20px; margin-top: 750px; position:absolute;">👉 Press "Space" to reset the pumpkin.<br>👉 "Enter" to clear the world.<br>👉 Editor mode: hold down 'q', 'w', 'e', 'r', or 't' (game objects) or 'm' (monsters), and click to add objects to the world and create your own structures.<br>👉 Looking for a Midjourney prompts bundle to learn how to generate AI images? Here you go: <a href="https://bestaiprompts.art/" style="cursor: pointer; color: #f1501f;">Best AI Prompts</a>.</p>
+    <script src="./p5.min.js"></script>
+    <script src="./matter.min.js"></script>
+
+    <script>
+        function showText() {
+            document.getElementById('infoText').style.display = 'block';
+        }
+    </script>
+    <script src="sketch.js"></script>
+</body>
+</html>

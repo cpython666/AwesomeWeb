@@ -1,0 +1,6 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	position: fixed;
+	background: rgb(30,30,30);
+}
