@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#userSkin{
+    width: 100vw;
+    height: 100vh;
+}
+#userSkin.skin-number {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABYAQMAAABCsAINAAAAA1BMVEXz9PY09oPDAAAAEUlEQVQYGWMYBaNgFIwCOgMABHgAATuTtVwAAAAASUVORK5CYII=) repeat
+}
+
+#userSkin.skin-number .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-number-title.209d2ae7.png)
+}
+
+#userSkin.skin-ai {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-ai-bg.ec7e0838.png) repeat;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-ai .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-ai-title.f0c07db8.png)
+}
+
+#userSkin.skin-blackaction {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blackaction-bg.ffce6e0a.png) no-repeat top #121213;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blackaction .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blackaction-title.63a9bd62.png)
+}
+
+#userSkin.skin-blackboard {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blackboard-bg.921a5fae.png) repeat left -48px
+}
+
+#userSkin.skin-blackwhale {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blackwhale-bg.63d50c7d.png) no-repeat center 100px #060a17;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blackwhale .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blackwhale-title.58bd63e1.png)
+}
+
+#userSkin.skin-blue {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blue-bg.6f8fca72.png) repeat
+}
+
+#userSkin.skin-blue .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blue-title.7453f4a7.png)
+}
+
+#userSkin.skin-cat {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAAA1BMVEWWrtjmaDIZAAAAC0lEQVQIHWMYlAAAAJYAAVsU5FsAAAAASUVORK5CYII=) repeat
+}
+
+#userSkin.skin-cat .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-cat-title.74dde5f9.png)
+}
+
+#userSkin.skin-city {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-city-bg.ae814de8.png) repeat-x left -48px
+}
+
+#userSkin.skin-city .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-city-title.86ae2c19.png)
+}
+
+#userSkin.skin-clickmove {
+    background: url(./img/skin-clickmove-bg.5a7e5126.gif) repeat
+}
+
+#userSkin.skin-clickmove .user-profile-head {
+    background-image: url(./img/skin-clickmove-title.2730b604.gif)
+}
+
+#userSkin.skin-code {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARwAAAEECAMAAADNr3skAAABF1BMVEUAEiMFGiwFGy0GHC4GHS8GHTAHHjEHHzIIIDMIITQJIjUJIzYKIzcKJDgLJTkLJjkLJzoMJzsMKDwNKT0NKj4OKj8OKz8OLEAPLUEPLUIQLkMQL0QRMEURMEYRMUYSMkcSM0gTM0kTNEoTNUsUNkwUN0wVN00VOE4WOU8WOlAWOlEXO1IXPFIYPVMYPVQZPlUZP1YZQFcaQFgaQVgbQlkbQ1ocQ1scRFwcRV0dRl4dRl8eR18eSGAeSWEfSmIfSmMgS2QgTGUhTWUhTWYhTmciT2giUGkjUGojUWskUmskU2wkU20lVG4lVW8mVnAmVnEnV3InWHInWXMoWnQoWnUpW3YpXHcqXXgrX3ovZoIwaYUxaYY7fJtv6ShTAAACZ0lEQVR42u3cS0rzUBiA4ZN4oejEgThRcAEOHTtw4Ew34P4El+ESBJfgBZyLUJTG5iRVqbREMZrkPI8/XtqAv68nX1IbGgIAAAAAAAAAAAAAwPdkTTfcGmdZlpdv1bsoy1fi1/XtlbB9kVrFUfNNj4byM+d2HnHEEUccccQRRxxxEEccccQRRxxxxBFHHMQRRxxxxBFHHHHEQRxx/ihOJs5ihTiIY+ZYOeKII444g7HadMNREcrL+6sr/KsL/Otr/esb473xoLY3lDhtHKFPHsoT6qL898lk/rPy7rXn1FbjQfNNV8wcA1kccRBHnD7HKcSxcsQRB3HEEUccccQRRxxxxEGcXsXx95wlun3Vz+pQVs7ZbZhM396fS529m9RPvk7vi3dPv+fGfT/i/J6768abviY3kLMWNs07va8MMM5gRvtg4uRWjpVj5vSho5lj5RjIBrKB3JHfspljtxLn1zdt4+85O+Pq2v7Z5f3h06X9H3fEj+vjLh+t2ohz1XzTsd3KzBFHHA88Ez4J9NjKyhHn/04CrRwD2W4ljjjiiONQbuU4lFs54ogjjjgGspXTr5PAwVzBvnZaxGv366dSw9xTq9Un1cf9mwAAAAAAAPAfOvm6UOeP9cvMfLzYTPH1y/jV7mVqv7Hj5psetvn/6OQznkUrm4ojTtJxJq1smt7KCeLYrX60rxjIZo7dShwzx8oRRxxxPLaycjy2snLMHCeBZk5qHe1WBrI4disrx0mgQ7mZI4444hjIVo444ogjjoFs5aTAylmik6+8tPHy/qNnxcIM8YbNJwscAAAAAAAAAAAAAOiQN94P6ep4Sx4SAAAAAElFTkSuQmCC) repeat
+}
+
+#userSkin.skin-code .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-code-title.e91fbecf.png)
+}
+
+#userSkin.skin-cookblue {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-cookblue-bg.e44df581.png) repeat
+}
+
+#userSkin.skin-cookblue .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-cookblue-title.ce38fb28.png)
+}
+
+#userSkin.skin-cookwhite {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAC+CAYAAABphGyhAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAPKADAAQAAAABAAAAvgAAAABA+QquAAACDklEQVR4Ae2WMQ7CUBTDKGLr/c/ZqTMINi8cwHG36HdxEj3luK7r/Rj6Xl/W8zz/It/3/Xs3/Pf8Syp8DFgYKpBKGHYIRQkLQwXSsTY85ird0kLhhWKu0gELWwykEoYdQjGXcEtL2GIgtbRgh1DMHa2AhS0GUgnDDqGYS7ilJWwxkFpasEMo5o5WwMIWA6mEYYdQzCXc0hK2GEgtLdghFHNHK2Bhi4FUwrBDKOYSbmkJWwyklhbsEIq5oxWwsMVAKmHYIRRzCbe0hC0GUksLdgjF3NEKWNhiIJUw7BCKuYRbWsIWA6mlBTuEYu5oBSxsMZBKGHYIxVzCLS1hi4HU0oIdQjF3tAIWthhIJQw7hGIu4ZaWsMVAamnBDqGYO1oBC1sMpBKGHUIxl3BLS9hiILW0YIdQzB2tgIUtBlIJww6hmEu4pSVsMZBaWrBDKOaOVsDCFgOphGGHUMwl3NISthhILS3YIRRzRytgYYuBVMKwQyjmEm5pCVsMpJYW7BCKuaMVsLDFQCph2CEUcwm3tIQtBlJLC3YIxdzRCljYYiCVMOwQirmEW1rCFgOppQU7hGLuaAUsbDGQShh2CMVcwi0tYYuB1NKCHUIxd7QCFrYYSCUMO4RiLuGWlrDFQGppwQ6hmDtaAQtbDKQShh1CMZdwS0vYYiC1tGCHUMwdrYCFLQZSCcMOoZhLeG5pfQDshKOOQNEgrgAAAABJRU5ErkJggg==) repeat
+}
+
+#userSkin.skin-cookwhite .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-cookwhite-title.23b68578.png)
+}
+
+#userSkin.skin-eyes {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-eyes-bg.b9921deb.png) no-repeat top #080808;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-finalboss {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAVFBMVEX51cr51sr518v52cz528763tD639D639H64dL64tL64tP649P649T65NT65dX65tX659b66Nb66Nf66df66dj66tj669n67Nr77tv779z78N378d3Gdd48AAAA3klEQVRo3u3ZuQ7CMBRE0ey77ZCN7f//k8bzhiISXWSJmfJI0aXhKYLsbTsWjLaDVtoK22n26HFiS6aIIookErnbhjquoXWwltbCOloDG2i1LWOvyuJyWgkraAWspOWw6uvzc4ooosjvyMu2BYx2A820GXaj2aPbiQVdYUUUSSXysPkurqc52EgbYY7Wwzyts+kKK6JIKpGnbZ7iHC3APM3DAs3BZtpk0xVWRJFUIpd843WFFVEkkcglb/W6woookkjkkl/udIUVUSSRyCX/zukKK6LIP0V0hRVRJI3IB9V/eHX75sZpAAAAAElFTkSuQmCC) repeat
+}
+
+#userSkin.skin-finalboss .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-finalboss-title.70fae8f0.png)
+}
+
+#userSkin.skin-growway {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAC6AQMAAADMLmzJAAAAA1BMVEXr9P9fH8mvAAAAFUlEQVQYGWMYBaNgFIyCUTAKBhQAAAaKAAEAKFd5AAAAAElFTkSuQmCC) repeat
+}
+
+#userSkin.skin-growway .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-growway-title.2f5e1491.png)
+}
+
+#userSkin.skin-ink {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-ink-bg.df208edb.png) repeat
+}
+
+#userSkin.skin-ink .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-ink-title.3ad29e2b.png)
+}
+
+#userSkin.skin-1024 {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-1024-bg.bd0d57de.gif) repeat #0a0a0a
+}
+
+#userSkin.skin-1024 .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-1024-title.660ba30a.gif)
+}
+
+#userSkin.skin-numberfifty {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeAQMAAAAB/jzhAAAAA1BMVEUKCgqw17mYAAAAC0lEQVQIHWMYlAAAAJYAAVsU5FsAAAAASUVORK5CYII=) repeat
+}
+
+#userSkin.skin-numberfifty .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-numberfifty-title.c2a42e7a.png)
+}
+
+#userSkin.skin-sea {
+    background: #f4f5f6
+}
+
+#userSkin.skin-sea .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-sea-title.555aae9c.png)
+}
+
+#userSkin.skin-shark {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAC6AQMAAADMLmzJAAAAA1BMVEU1XafCfQ/zAAAAFUlEQVQYGWMYBaNgFIyCUTAKBhQAAAaKAAEAKFd5AAAAAElFTkSuQmCC) repeat
+}
+
+#userSkin.skin-shark .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-shark-title.22e1ab27.png)
+}
+
+#userSkin.skin-shirtblue {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-shirtblue-bg.e524c28c.png) repeat
+}
+
+#userSkin.skin-shirtblue .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-shirtblue-title.7f860a31.png)
+}
+
+#userSkin.skin-technology .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-technology-title.1541d63b.png)
+}
+
+#userSkin.skin-thespecialists {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-thespecialists-bg.456af12e.gif) repeat
+}
+
+#userSkin.skin-thespecialists .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-thespecialists-title.13394c1f.gif)
+}
+
+#userSkin.skin-whitemove {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-whitemove-bg.5a7e5126.gif) repeat
+}
+
+#userSkin.skin-whitemove .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-whitemove-title.2730b604.gif)
+}
+
+#userSkin.skin-years {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-years-bg.17b7d3a1.png) repeat
+}
+
+#userSkin.skin-years .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-years-title.1e2d3660.png)
+}
+
+#userSkin.skin-yellow {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAABiCAMAAABzuZ0CAAAAUVBMVEXa3MHc3sTc38Tf4cff4sjg4sjg4sng48nh48nh48rh5Mri5Mri5Mvi5cvj5cvj5czj5c3j5s3k5s3k5s7l587l58/l6M/m6M/m6NDn6dDn6dFCi2IWAAADCElEQVRo3u1a226jMBScQW7Sqm/7/x+5Wmm3CaRMHwiBg42xwbBVFV6CwXDucy6EgMMbIAyHAEjDojttMdky/NI+Pz4+4VDN3CMROTSlpNhuOrU8dbz0PA2/U0L0yFCMvv+iltWdY2bJwjEvUYlBwr2hwS9ztQFeRssaOM2tLsCrefYvgHfLTTNrj5LHT6HhmPlA3I1C3pEtx5IbhXWlfRUlwClbkFwScLlyc4XNcx/gCnsoX7+526uQL8oybjlvs4xDhX03xmrbKtsDquVtMm9VG3MzevZi0B7aYABNY7TzXQH1VOE1hz2N4bgep19cR0JKAK6e4JrzXdozpjl1926uiA/Gvc6cC6CPmg4wmc3Pg5gu7ersRajJjH9WYkOO0FwT5ytg4X/lWu1PQ4xSVIJ2Fn2X0UBXGTmK1yUhXCuXPu4ldeFiJ5TPl4sZbglDgqikXaNQ0g4xqKBfqaBnKYDTrk88gwJrq9mbecPNtGk3tJajj341TvtuVgYGhBr6p8HbwkJX7XCjkoLbyLDqCNPczXebHDKw8/OMl7QychQwyVG/D6rbj8lRYm5M5REhqnywyIUZbozzJCIOLIobIS62+hVT/OoAXW3zXSb67gFzBgC4mKFVY/msjWk/DUpf+3t6jKtMS6eehrz52FypNd8APWCYgXqsWuqKFbGBAld7tjjR1RLuniKrBdy99vljT786Kj6wPxEHcN/oYLj/SDeRVupK380eTxp74K6xX2ORqzFNTjP4BUe421+9PO6O8DjU49BW30rtsRQCZDCUB5ngqV1xLVPujqtsTeZX4uv0ZediuHuRWO3RLPs9TrW35/6Y+Diid16cvZboPw6ZXzHSbuZlrJnAdQmJRhvnPgfNrxIq0O26uiNyf9jpOxqNMbYxYHudCv7RIaIttF2wE51XnXwfUIKuFojYz/F+4a5FizoPjQHwHIN6s9ICtv/bjldra7jSJJ711XejERhklkQsgXCZ2K3cHVLCd7XcmZhSclThBnHrHC5JbBb3KwVFe/43Cmn/jfoCEswqv19q/xcAAAAASUVORK5CYII=) repeat
+}
+
+#userSkin.skin-yellow .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-yellow-title.bcb1e42e.png)
+}
+
+#userSkin.skin3-template {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin3-template-bg.a1a5f267.png) no-repeat center 100px;
+    background-size: 1920px 715px
+}
+
+#userSkin.skin3-template .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin3-template-title.5e01e3bd.png)
+}
+
+#userSkin.skin-blogstar2019 {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2019-bg.7a9f5ed6.png) no-repeat top #8a0d10;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blogstar2019 .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2019-title.7ed562e1.png)
+}
+
+#userSkin.skin-blogstar2020 {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2020-bg.6e949bfb.png) no-repeat top #190303;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blogstar2020 .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2020-title.55d6ff04.png)
+}
+
+#userSkin.skin-blogstar2021 {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2021-bg.e8362301.png) repeat top #000105;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blogstar2021 .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2021-title.d515a7e0.png)
+}
+
+#userSkin.skin-blogstar2022 {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2022-bg.0d48b80e.png) no-repeat top #09093b;
+    background-size: 1920px auto
+}
+
+#userSkin.skin-blogstar2022 .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-blogstar2022-title.45dcdfe6.png)
+}
+
+#userSkin.skin-sequoiadb {
+    background: #faf6ef
+}
+
+#userSkin.skin-sequoiadb .user-profile-head {
+    background-image: url(https://csdnimg.cn/release/cmsfe/public/img/skin-sequoiadb-title.9266e9aa.png)
+}
+
+#userSkin.skin-expert {
+    background: url(https://csdnimg.cn/release/cmsfe/public/img/skin-expert-bg.aae3ef3a.png) no-repeat top #808ab3;
+    background-size: 1920px auto
+}

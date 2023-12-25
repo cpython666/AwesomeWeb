@@ -73,6 +73,7 @@ function createStart() {
     x: random * width - height / 4,
     y: random * -200,
     length: random2 * 50 + 200,
+    // r: 10,
     r: random2 * 2,
     vx: vx,
     vy: vx * 10,
