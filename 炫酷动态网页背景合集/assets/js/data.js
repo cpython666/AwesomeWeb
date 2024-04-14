@@ -159,5 +159,10 @@ var data=[
             "url":"./bgs2/23/index.html",
             "imgUrl":"./bgs2/23/preview.gif"
         },
+        {
+            "name":"Github旋转星空",
+            "url":"./bgs2/34/index.html",
+            "imgUrl":"./bgs2/34/preview.gif"
+        },
     ]
 
