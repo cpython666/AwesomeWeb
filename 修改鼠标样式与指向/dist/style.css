@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  cursor: none;
+}
+
+:root {
+  --cursor-1-bg: #ffffff;
+  --cursor-2-bg: #151a1f;
+  --cursor-3-bg: #f1f68f;
+  --cursor-4-bg: #b0efda;
+  --cursor-5-bg: #d5c9fb;
+  --cursor-6-bg: #ffbc90;
+  --cursor-1-bg-line: #eef1f4;
+  --cursor-2-bg-line: #1f272e;
+  --cursor-3-bg-line: #f1f68f;
+  --cursor-4-bg-line: #b0efda;
+  --cursor-5-bg-line: #d5c9fb;
+  --cursor-6-bg-line: #ffbc90;
+  --curzr-logo-color: #292927;
+}
+:root body {
+  position: relative;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.875rem;
+  overflow: hidden;
+  color: #292927;
+}
+:root body header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 7;
+  padding: 2rem;
+}
+:root body header span {
+  overflow: hidden;
+  transition: 250ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+:root body header span:hover {
+  opacity: 0.75;
+}
+:root body header span > * {
+  display: inline-block;
+}
+:root body header svg {
+  width: 75px;
+}
+:root body header svg .cls-1 {
+  fill: var(--curzr-logo-color);
+}
+:root body .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: 40px 80px;
+  background-position: center;
+  background-attachment: fixed;
+}
+:root body .container-cursor-1 {
+  z-index: 6;
+  background-color: var(--cursor-1-bg);
+  background-image: linear-gradient(var(--cursor-1-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-1-bg-line) 1px, var(--cursor-1-bg) 1px);
+}
+:root body .container-cursor-2 {
+  z-index: 5;
+  background-color: var(--cursor-2-bg);
+  background-image: linear-gradient(var(--cursor-2-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-2-bg-line) 1px, var(--cursor-2-bg) 1px);
+}
+:root body .container-cursor-3 {
+  z-index: 4;
+  background-color: var(--cursor-3-bg);
+  background-image: linear-gradient(var(--cursor-3-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-3-bg-line) 1px, var(--cursor-3-bg) 1px);
+}
+:root body .container-cursor-4 {
+  z-index: 3;
+  background-color: var(--cursor-4-bg);
+  background-image: linear-gradient(var(--cursor-4-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-4-bg-line) 1px, var(--cursor-4-bg) 1px);
+}
+:root body .container-cursor-5 {
+  z-index: 2;
+  background-color: var(--cursor-5-bg);
+  background-image: linear-gradient(var(--cursor-5-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-5-bg-line) 1px, var(--cursor-5-bg) 1px);
+}
+:root body .container-cursor-6 {
+  z-index: 1;
+  background-color: var(--cursor-6-bg);
+  background-image: linear-gradient(var(--cursor-6-bg-line) 1px, transparent 1px), linear-gradient(to right, var(--cursor-6-bg-line) 1px, var(--cursor-6-bg) 1px);
+}
+:root body footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 7;
+  padding: 1.5rem 2rem;
+  line-height: 1.25;
+}
+:root body footer span {
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+:root body footer span > * {
+  display: inline-block;
+}
+:root body a {
+  color: #292927;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: none;
+}
+:root body small.shift-in {
+  position: relative;
+}
+:root body small.shift-in::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+}
