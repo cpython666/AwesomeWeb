@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Canvas鼠标绘制线条特效</title>
+        <style>
+            #app {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                background: #090909;
+            }
+
+            p {
+                color: white;
+                font-size: 20px;
+                padding-left: 20px;
+            }
+
+            div {
+                cursor: pointer;
+                color: #fff;
+                font-weight: bold;
+                font-size: 22px;
+                box-sizing: border-box;
+                width: fit-content;
+            }
+        </style>
+    </head>
+    <!--  -->
+    <body>
+        <div id="app">
+            <div onclick="changeMouser(1)">切换鼠标特效-躁动线条</div>
+            <div onclick="changeMouser(2)">切换鼠标特效-绚丽流星</div>
+            <div onclick="changeMouser(3)">切换鼠标特效-大数据</div>
+            <div onclick="changeMouser(4)">切换鼠标特效-街头涂鸦</div>
+            <div onclick="changeMouser(5)">切换鼠标特效-连线点阵</div>
+            <div onclick="changeMouser(6)">切换鼠标特效-萤火之光</div>
+            <div onclick="changeMouser(7)">切换鼠标特效-多彩烟花</div>
+            <div onclick="changeMouser(8)">切换鼠标特效-放大镜</div>
+        </div>
+        <!-- <script src="../mouser-lqy.js" type="text/javascript" charset="utf-8"></script> -->
+        <script src="../index.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            let mouserModel = 6,
+                mouser;
+            const mouseModels = {
+                1: {
+                    title: '躁动线条',
+                    options: {
+                        leaveAutoer: true, //鼠标移出后自动绘制 drawType为1时生效
+                        showTime: 20, //绘制的线条显示的时间 drawType为1时生效
+                        maxWidth: 12, //最大宽度 drawType为1时生效
+                        minWidth: 4, //最小宽度 drawType为1时生效
+                    }
+                },
+                2: {
+                    title: '绚丽流星',
+                    options: {
+                        // color: '#F8EC85', //颜色 drawType为2、5时生效，默认值#F8EC85
+                    }
+                },
+                3: {
+                    title: '大数据',
+                    options: {
+                        // dotColor: '#F22323',//#9CD9F9
+                        // lineColor: '#F2EC23'//#9CD9F9
+                    }
+                },
+                4: {
+                    title: '街头涂鸦',
+                    options: {}
+                },
+                5: {
+                    title: '连线点阵',
+                    options: {
+                        // color: '#FFF300',//颜色 drawType为2、5时生效 默认值#A5FBFF
+                        // number: 10000//8000
+                    }
+                },
+                6: {
+                    title: '萤火之光',
+                    options: {}
+                },
+                7: {
+                    title: '多彩烟花',
+                    options: {
+                        // colors: ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C']
+                    }
+                },
+                8: {
+                    title: '放大镜',
+                    options: {
+                        multi: 1.5,
+                        // border: {
+                        //     width: 10,
+                        //     color: '#069'
+                        // }
+                    }
+                }
+            }
+            mouser = new Mouser({
+                ...{
+                    drawType: mouserModel
+                },
+                ...mouseModels[mouserModel].options
+            });
+
+            function changeMouser(type) {
+                mouserModel = type;
+                document.title = `Canvas绘制鼠标${mouseModels[mouserModel].title}特效`;
+                mouser.changeModel({
+                    ...{
+                        drawType: mouserModel
+                    },
+                    ...mouseModels[mouserModel].options
+                });
+            }
+        </script>
+    </body>
+</html>

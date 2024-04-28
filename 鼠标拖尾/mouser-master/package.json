@@ -1,0 +1,16 @@
+{
+  "name": "mouser-lqy",
+  "version": "0.0.1",
+  "description": "鼠标特效库，简单几行代码就可实现华丽的鼠标拖尾特效",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:lqy178/mouser.git"
+  },
+  "keywords": [],
+  "author": "猿某人 <1787750205@qq.com>",
+  "license": "MIT"
+}
