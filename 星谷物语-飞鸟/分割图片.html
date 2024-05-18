@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Splitter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #controls {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        #preview {
+            flex: 1;
+            position: relative;
+        }
+        #preview img {
+            max-width: 100%;
+        }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10; /* 确保 overlay 画布在图像上方 */
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h1>Image Splitter</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <div>
+            <label for="rows">Rows:</label>
+            <input type="number" id="rows" min="1" value="2">
+            <label for="columns">Columns:</label>
+            <input type="number" id="columns" min="1" value="2">
+        </div>
+        <button id="splitButton">Split and Download</button>
+    </div>
+    <div id="preview">
+        <img id="imgPreview" alt="Preview Image">
+        <canvas id="overlay"></canvas>
+    </div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script>
+        let imageSrc = null;
+        const previewImg = document.getElementById('imgPreview');
+        const overlay = document.getElementById('overlay');
+
+        document.getElementById('imageInput').addEventListener('change', (event) => {
+            const fileInput = event.target;
+            if (!fileInput.files.length) return;
+
+            const file = fileInput.files[0];
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+            imageSrc = img.src;
+            img.onload = () => {
+                previewImg.src = img.src;
+                previewImg.onload = () => {
+                    overlay.width = previewImg.width;
+                    overlay.height = previewImg.height;
+                    updatePreview();
+                };
+            };
+        });
+
+        document.getElementById('rows').addEventListener('input', updatePreview);
+        document.getElementById('columns').addEventListener('input', updatePreview);
+
+        function updatePreview() {
+            if (!imageSrc) return;
+            const rows = parseInt(document.getElementById('rows').value);
+            const columns = parseInt(document.getElementById('columns').value);
+            const img = new Image();
+            img.src = imageSrc;
+            img.onload = () => {
+                const pieceWidth = img.width / columns;
+                const pieceHeight = img.height / rows;
+                const overlayCtx = overlay.getContext('2d');
+                overlayCtx.clearRect(0, 0, overlay.width, overlay.height);
+                overlayCtx.strokeStyle = 'red';
+                overlayCtx.lineWidth = 1;
+
+                // 画水平线
+                for (let r = 1; r < rows; r++) {
+                    overlayCtx.beginPath();
+                    overlayCtx.moveTo(0, r * pieceHeight);
+                    overlayCtx.lineTo(img.width, r * pieceHeight);
+                    overlayCtx.stroke();
+                }
+
+                // 画垂直线
+                for (let c = 1; c < columns; c++) {
+                    overlayCtx.beginPath();
+                    overlayCtx.moveTo(c * pieceWidth, 0);
+                    overlayCtx.lineTo(c * pieceWidth, img.height);
+                    overlayCtx.stroke();
+                }
+            };
+        }
+
+        document.getElementById('splitButton').addEventListener('click', () => {
+            const fileInput = document.getElementById('imageInput');
+            const rows = parseInt(document.getElementById('rows').value);
+            const columns = parseInt(document.getElementById('columns').value);
+            if (!fileInput.files.length) {
+                alert('Please select an image first.');
+                return;
+            }
+            const file = fileInput.files[0];
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+            img.onload = () => {
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+                const pieceWidth = img.width / columns;
+                const pieceHeight = img.height / rows;
+                canvas.width = pieceWidth;
+                canvas.height = pieceHeight;
+                const zip = new JSZip();
+                let completed = 0;
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < columns; c++) {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, c * pieceWidth, r * pieceHeight, pieceWidth, pieceHeight, 0, 0, pieceWidth, pieceHeight);
+                        canvas.toBlob(blob => {
+                            zip.file(`piece_${r}_${c}.png`, blob);
+                            completed++;
+                            if (completed === rows * columns) {
+                                zip.generateAsync({type: 'blob'}).then(content => {
+                                    const link = document.createElement('a');
+                                    link.href = URL.createObjectURL(content);
+                                    link.download = 'pieces.zip';
+                                    link.click();
+                                });
+                            }
+                        });
+                    }
+                }
+            };
+        });
+    </script>
+</body>
+</html>

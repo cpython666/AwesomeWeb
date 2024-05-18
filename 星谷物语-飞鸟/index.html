@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Bird</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #87CEEB;
+        }
+        #bird {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('bird0.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: background-image 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="bird"></div>
+    <script>
+        const bird = document.getElementById('bird');
+        let birdX = window.innerWidth / 2;
+        let birdY = window.innerHeight / 2;
+        let mouseX = birdX;
+        let mouseY = birdY;
+        let frame = 0;
+
+        bird.style.left = birdX + 'px';
+        bird.style.top = birdY + 'px';
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        function animateBird() {
+            const dx = mouseX - birdX;
+            const dy = mouseY - birdY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance > 20) {
+                birdX += dx / distance * 5;
+                birdY += dy / distance * 5;
+                bird.style.left = birdX + 'px';
+                bird.style.top = birdY + 'px';
+            }
+
+            // Toggle between frame 0 and frame 1
+            frame = (frame + 1) % 2;
+            bird.style.backgroundImage = `url('bird${frame}.png')`;
+
+            requestAnimationFrame(animateBird);
+        }
+
+        animateBird();
+    </script>
+</body>
+</html>
