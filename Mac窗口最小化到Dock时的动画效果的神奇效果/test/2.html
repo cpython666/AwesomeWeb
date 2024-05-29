@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimize to Dock Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+  .window {
+    width: 300px;
+    height: 200px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  .dock {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .dock-icon {
+    width: 50px;
+    height: 50px;
+    background: #007aff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<div class="window" id="window">
+  <button onclick="minimize()">Minimize</button>
+</div>
+<div class="dock">
+  <div class="dock-icon" id="dockIcon"></div>
+</div>
+
+<script>
+  function minimize() {
+    const windowElement = document.getElementById('window');
+    const dockIcon = document.getElementById('dockIcon');
+    
+    const dockRect = dockIcon.getBoundingClientRect();
+    const windowRect = windowElement.getBoundingClientRect();
+    
+    const scaleX = dockRect.width / windowRect.width;
+    const scaleY = dockRect.height / windowRect.height;
+    const translateX = dockRect.left - windowRect.left + (dockRect.width / 2 - windowRect.width / 2);
+    const translateY = dockRect.top - windowRect.top + (dockRect.height / 2 - windowRect.height / 2);
+
+    windowElement.style.transformOrigin = 'top left';
+    windowElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+    windowElement.style.opacity = '0';
+  }
+</script>
+
+</body>
+</html>

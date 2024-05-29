@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimize to Dock Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  .window {
+    width: 300px;
+    height: 200px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .window.minimized {
+    transform-origin: top left;
+    transform: translate(500px, 300px) scale(0.1);
+    opacity: 0;
+  }
+
+  .dock {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dock-icon {
+    width: 50px;
+    height: 50px;
+    background: #007aff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+<div class="dock">
+  <div class="dock-icon" id="dockIcon"></div>
+</div>
+
+<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone"></script>
+
+<script type="text/babel">
+  function MinimizeEffect() {
+    const [minimized, setMinimized] = React.useState(false);
+
+    const minimize = () => {
+      setMinimized(true);
+      setTimeout(() => {
+        setMinimized(false);
+      }, 500); // 500ms matches the CSS transition duration
+    };
+
+    return (
+      <div className={`window ${minimized ? 'minimized' : ''}`} id="window">
+        <button onClick={minimize}>Minimize</button>
+      </div>
+    );
+  }
+
+  ReactDOM.render(<MinimizeEffect />, document.getElementById('root'));
+</script>
+
+</body>
+</html>
