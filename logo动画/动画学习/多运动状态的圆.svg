@@ -1,0 +1,28 @@
+<svg width="400" height="400"  xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义圆形 -->
+  <circle cx="50" cy="50" r="20" fill="red">
+    <!-- 颜色变化动画 -->
+    <animate attributeName="fill" 
+             values="red;orange;yellow;green;cyan;blue;purple;red" 
+             dur="7s" 
+             repeatCount="indefinite" />
+
+    <!-- 水平位置变化动画 -->
+    <animate attributeName="cx" 
+             values="50;350;50" 
+             dur="7s" 
+             repeatCount="indefinite" />
+
+    <!-- 垂直位置变化动画 -->
+    <animate attributeName="cy" 
+             values="50;350;50" 
+             dur="7s" 
+             repeatCount="indefinite" />
+
+    <!-- 半径变化动画 -->
+    <animate attributeName="r" 
+             values="20;40;20" 
+             dur="7s" 
+             repeatCount="indefinite" />
+  </circle>
+</svg>

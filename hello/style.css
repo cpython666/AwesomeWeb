@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+#hello-container {
+    text-align: center;
+}
+
+.hello-text {
+    font-size: 50px;
+    opacity: 0;
+    animation: fadeIn 2s forwards, changeText 6s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes changeText {
+    0%, 20% {
+        content: "Hello";
+    }
+    40%, 60% {
+        content: "Bonjour";
+    }
+    80%, 100% {
+        content: "Hola";
+    }
+}

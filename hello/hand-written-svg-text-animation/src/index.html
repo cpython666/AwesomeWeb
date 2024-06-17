@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>页面标题</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="页面简介" />
+</head>
+<body>
+	<div id="app"></div>
+	<script>
+	TextToSVG.load('https://cdn.haoji.me/files/202406/20240611_184503_543_hXaffPCgzOE1.otf', (err, textToSVG) => {
+	console.log('load success');
+	  const svg = textToSVG.getSVG('阿拐帅不帅', {
+		x: 0,
+		y: 0,
+		anchor: 'left top',
+		fontSize: 88,
+	  });
+	  document.body.innerHTML = svg;
+  });
+	</script>
+</body>
+</html>

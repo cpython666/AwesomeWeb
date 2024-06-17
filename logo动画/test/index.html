@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SVG Animation</title>
+	<style>
+		body {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#logo {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#sun {
+			width: 50px;
+			height: 50px;
+		}
+
+		#moon {
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="logo">
+		<img src="./ship.svg" />
+		<img id="sun" src="./sun.svg" />
+		<img id="moon" src="./moon.svg" />
+        <svg>
+            <path id="motionPath" fill: 'antiquewhite' d="M 250,250 m -100,0 a 100,100 0 1,1 200,0 a 100,100 0 1,1 -200,0"></path>
+        </svg>
+	</div>
+</body>
+<script src="anime.min.js"></script>
+<script>
+const path = anime.path('#motionPath');
+
+// 太阳动画
+anime({
+	targets: '#sun',
+	translateX: path('x'),
+	translateY: path('y'),
+	duration: 5000,
+	loop: true,
+	easing: 'linear'
+});
+
+// 月亮动画
+anime({
+	targets: '#moon',
+	translateX: path('x'),
+	translateY: path('y'),
+	duration: 10000,
+	direction: 'reverse',
+	loop: true,
+	easing: 'linear'
+});
+</script>
+</html>

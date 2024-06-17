@@ -1,0 +1,8 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="10" fill="red" transform="scale(1)"
+          style="transform-origin: 50px 50px;">
+    <animateTransform attributeName="transform" attributeType="XML"
+                      type="scale" values="1;0.2;1" dur="2s"
+                      repeatCount="indefinite"/>
+  </circle>
+</svg>

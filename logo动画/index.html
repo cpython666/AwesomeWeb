@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Animation</title>
+	<style>
+		#logo {
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			width: 600px;
+			height: 600px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#logo img {
+			position: absolute;
+		}
+
+		svg {
+			width: 200px;
+			position: absolute;
+		}
+
+		#sun,
+		#moon {
+			width: 50px;
+			height: 50px;
+			left: 175px;
+			top: 210px;
+			position: absolute;
+			color: rgb(222, 225, 228);
+		}
+
+		#ship {
+			width: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="logo">
+		<img id="ship" src="./imgs/ship.svg" />
+		<img id="sun" src="./imgs/sun.svg" />
+		<img id="moon" src="./imgs/moon.svg" />
+		<svg id="pathsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 202">
+			<path id="sunPath" d="M1,101 a150,100 0 1,1 0,1 Z" style="fill: none; stroke: none;" />
+			<ellipse id="moonPath" cx="150" cy="100" rx="150" ry="100" style="fill: none; stroke: none;" />
+		</svg>
+	</div>
+
+	<script src="anime.min.js"></script>
+	<script>
+		const sunPath = anime.path('#sunPath');
+		const moonPath = anime.path('ellipse');
+		anime({
+			targets: '#sun',
+			translateX: sunPath('x'),
+			translateY: sunPath('y'),
+			duration: 6000,
+			loop: true,
+			easing: 'linear'
+		});
+		anime({
+			targets: '#moon',
+			translateX: moonPath('x'),
+			translateY: moonPath('y'),
+			duration: 6000,
+			loop: true,
+			easing: 'linear'
+		});
+		// anime({
+        //     targets: '#ship',
+		// 	backgroundColor: ['#333333','#FFFFFF','#333333', '#000000', '#333333'],
+        //     duration: 6000,
+        //     easing: 'linear',
+        //     loop: true,
+        //     direction: 'alternate'
+        // });
+	</script>
+</body>
+
+</html>
