@@ -3,9 +3,10 @@ console.log(svgPath)
 
 const svgText = anime({
   targets: svgPath,
-  loop: true,
+  loop: false,
   direction: 'alternate',
   strokeDashoffset: [anime.setDashoffset, 0],
+  // easing: 'liner',
   easing: 'easeInOutSine',
   duration: 500,
-  delay: (el, i) => {return i * 500;} });
+  delay: (el, i) => {return i * 800;} });
